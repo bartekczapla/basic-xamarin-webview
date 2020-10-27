@@ -17,6 +17,7 @@ using Android.Support.V7.App;
 using Unity;
 using CommonServiceLocator;
 using Unity.ServiceLocation;
+using System.Threading.Tasks;
 
 namespace BasicXamarin.Droid
 {
@@ -32,6 +33,11 @@ namespace BasicXamarin.Droid
             SetContentView(Resource.Layout.main);
             var webView = FindViewById<Android.Webkit.WebView>(Resource.Id.customWebView);
             var customWebView = new CustomWebView(webView);
+        
+            customWebView.RegisterCallback("getAnimals", async (string value) =>
+            {
+                var a = value;
+            });
             customWebView.LoadUrl("http://any/index.html");
             var container = ServiceRegistry.BuildContainer();
             ServiceRegistry.SetLocatorProvider(container);

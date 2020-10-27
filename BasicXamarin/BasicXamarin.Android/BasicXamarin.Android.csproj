@@ -55,6 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -68,6 +69,9 @@
       <Version>2.0.2</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
     </PackageReference>
     <PackageReference Include="Unity">
       <Version>5.11.7</Version>
@@ -84,6 +88,8 @@
     <Compile Include="AndroidSettingsProvider.cs" />
     <Compile Include="CustomWebView\CustomWebView.cs" />
     <Compile Include="CustomWebView\CustomWebViewClient.cs" />
+    <Compile Include="CustomWebView\CustomWebViewJSBridge.cs" />
+    <Compile Include="CustomWebView\JavascriptValueCallback.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ServiceRegistry.cs" />

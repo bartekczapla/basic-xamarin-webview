@@ -19,6 +19,7 @@ namespace BasicXamarin.Droid
     {
         private readonly Assembly _assembly;
         private readonly string _prefix;
+        public event Action onPageFinishedCustom;
 
         public CustomWebViewClient(Assembly assembly)
         {
@@ -40,6 +41,7 @@ namespace BasicXamarin.Droid
         public override void OnPageFinished(Android.Webkit.WebView view, string url)
         {
             base.OnPageFinished(view, url);
+            onPageFinishedCustom?.Invoke();
         }
 
         private WebResourceResponse OnRequest(string url)
